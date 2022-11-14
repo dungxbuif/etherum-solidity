@@ -21,7 +21,8 @@ This box has been based from [pet-shop-box](https://github.com/truffle-box/pet-s
 3. Run the development console.
 
    ```javascript
-   truffle develop
+   truffle migrate --network ganache
+   truffle console --network ganache
    ```
 
 4. Compile and migrate the smart contracts. Note inside the development console we don't preface commands with `truffle`.
@@ -47,6 +48,10 @@ This box has been based from [pet-shop-box](https://github.com/truffle-box/pet-s
    -  ```
        ChainList.deployed().then(function(instance){app = instance;})
       ```
+   -  ```
+      app.contract.setProvider("http://127.0.0.1:7545")
+      ```
+
    -  ```
       app.sellArticle("IPhone 7","Selling in order to buy IP8",web3.utils.toWei("3","ether"),{from: accounts[1]})
       ```
