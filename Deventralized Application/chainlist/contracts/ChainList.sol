@@ -7,8 +7,6 @@ contract ChainList {
     string description;
     uint256 price;
 
-    //sell an article
-
     function sellArticle(
         string memory _name,
         string memory _description,

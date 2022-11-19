@@ -21,7 +21,8 @@ This box has been based from [pet-shop-box](https://github.com/truffle-box/pet-s
 3. Run the development console.
 
    ```javascript
-   truffle migrate --network ganache
+   truffle migrate --compile-all --reset --network ganache
+   truffle migrate  --reset --network ganache
    truffle console --network ganache
    ```
 
@@ -58,3 +59,12 @@ This box has been based from [pet-shop-box](https://github.com/truffle-box/pet-s
    // Serves the front-end on http://localhost:3000
    npm run dev
    ```
+
+## Testing
+
+Chay test
+
+```javascript
+   truffle test --network ganache
+
+```
