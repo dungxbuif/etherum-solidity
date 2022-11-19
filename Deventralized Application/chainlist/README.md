@@ -35,10 +35,6 @@ This box has been based from [pet-shop-box](https://github.com/truffle-box/pet-s
    Check the balance:
 
    -  ```
-      web3.setProvider("http://127.0.0.1:7545")
-      ```
-
-   -  ```
       web3.eth.getAccounts(function (err, acc) { accounts = acc;});
       ```
 
@@ -47,9 +43,6 @@ This box has been based from [pet-shop-box](https://github.com/truffle-box/pet-s
       ```
    -  ```
        ChainList.deployed().then(function(instance){app = instance;})
-      ```
-   -  ```
-      app.contract.setProvider("http://127.0.0.1:7545")
       ```
 
    -  ```
