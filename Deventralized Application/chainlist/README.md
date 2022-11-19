@@ -22,8 +22,9 @@ This box has been based from [pet-shop-box](https://github.com/truffle-box/pet-s
 
    ```javascript
    truffle migrate --compile-all --reset --network ganache
-   truffle migrate  --reset --network ganache
+   truffle migrate --compile-all --reset --network chainskills
    truffle console --network ganache
+   truffle console --network chainskills
    ```
 
 4. Compile and migrate the smart contracts. Note inside the development console we don't preface commands with `truffle`.
@@ -67,4 +68,12 @@ Chay test
 ```javascript
    truffle test --network ganache
 
+```
+
+## Private Node
+
+Unloack account
+
+```javascript
+web3.eth.personal.unlockAccount(accounts[1], "pass1234", 600);
 ```

@@ -3,11 +3,19 @@ pragma solidity ^0.5.16;
 contract ChainList {
     //state variables
     address seller;
+    address buyer;
     string name;
     string description;
     uint256 price;
 
     event LogSellArticle(address indexed _seller, string _name, uint256 _price);
+
+    event LogBuyArticle(
+        address indexed _seller,
+        address indexed _buyer,
+        string _name,
+        uint256 _price
+    );
 
     function sellArticle(
         string memory _name,
