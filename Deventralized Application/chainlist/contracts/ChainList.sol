@@ -7,6 +7,8 @@ contract ChainList {
     string description;
     uint256 price;
 
+    event LogSellArticle(address indexed _seller, string _name, uint256 _price);
+
     function sellArticle(
         string memory _name,
         string memory _description,
@@ -16,6 +18,8 @@ contract ChainList {
         name = _name;
         description = _description;
         price = _price;
+
+        emit LogSellArticle(seller, name, price);
     }
 
     function getArticle()

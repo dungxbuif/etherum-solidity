@@ -68,3 +68,7 @@ Chay test
    truffle test --network ganache
 
 ```
+
+```
+  var sellEvent = app.LogSellArticle({},{fromBlock: 0, toBlock:'latest'}).on('data', event => { console.log(event)});
+```
