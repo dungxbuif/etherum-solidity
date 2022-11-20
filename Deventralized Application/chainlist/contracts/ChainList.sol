@@ -2,8 +2,8 @@ pragma solidity ^0.5.16;
 
 contract ChainList {
     //state variables
-    address seller;
-    address buyer;
+    address payable seller;
+    address payable buyer;
     string name;
     string description;
     uint256 price;
@@ -35,11 +35,22 @@ contract ChainList {
         view
         returns (
             address _seller,
+            address _buyer,
             string memory _name,
             string memory _description,
             uint256 _price
         )
     {
-        return (seller, name, description, price);
+        return (seller, buyer, name, description, price);
+    }
+
+    function buyArticle() public payable {
+        require(seller != address(0x0));
+        require(buyer == address(0x0));
+        require(msg.sender != seller);
+        require(msg.value == price);
+        buyer = msg.sender;
+        seller.transfer(msg.value);
+        emit LogBuyArticle(seller, buyer, name, price);
     }
 }

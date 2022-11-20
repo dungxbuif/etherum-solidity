@@ -41,7 +41,7 @@ This box has been based from [pet-shop-box](https://github.com/truffle-box/pet-s
       ```
 
    -  ```
-      const balance = async (index) => { return web3.utils.fromWei( await web3.eth.getBalance(accounts[index]), "ether");};
+      var balance = async (index) => { return web3.utils.fromWei( await web3.eth.getBalance(accounts[index]), "ether");};
       ```
    -  ```
        ChainList.deployed().then(function(instance){app = instance;})
@@ -51,9 +51,9 @@ This box has been based from [pet-shop-box](https://github.com/truffle-box/pet-s
       app.sellArticle("IPhone 7","Selling in order to buy IP8",web3.utils.toWei("3","ether"),{from: accounts[1]})
       ```
 
-   ```
-
-   ```
+   -  ```
+      app.buyArticle({from:accounts[2], value:web3.utils.toWei("3","ether")})
+      ```
 
 5. Run the `liteserver` development server (outside the development console) for front-end hot reloading. Smart contract changes must be manually recompiled and migrated.
    ```javascript
